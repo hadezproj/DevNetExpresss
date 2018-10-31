@@ -1,0 +1,24 @@
+YTNiZDBiZmMtYjg4OC00MTVmLThhM2YtMDZlNzhjY2RlNGM0MWQ0ODVmMWUtNzE0
+
+Invoke-RestMethod -Uri https://api.ciscospark.com/v1/rooms?max=1000 -Headers $headers | %{$_.items | ?{$_.title -eq "aaringo DevNet Express DCI Event Room"} |  Select-Object id, title}
+
+$headers = @{"Authorization" = "Bearer YTNiZDBiZmMtYjg4OC00MTVmLThhM2YtMDZlNzhjY2RlNGM0MWQ0ODVmMWUtNzE0"; "Content-Type" = "application/json"; "Accept" = "application/json"}
+
+$devnet_express_room_id = "Y2lzY29zcGFyazovL3VzL1JPT00vYjc4Yjg2MzAtYjEyOS0xMWU4LThmMTctMjNhYmY5NzVhYjY2"
+
+Invoke-RestMethod -Uri https://api.ciscospark.com/v1/messages -Method POST -Headers $headers -Body $('{"roomId":"' + $devnet_express_room_id + '", "text":"I have completed the Introduction to PowerShell Basic Mission"}')
+
+
+{
+			"id": "Y2lzY29zcGFyazovL3VzL1JPT00vYjc4Yjg2MzAtYjEyOS0xMWU4LThmMTctMjNhYmY5NzVhYjY2",
+			"title": "DevNet Express - Toronto - DCI",
+			"type": "group",
+			"isLocked": true,
+			"lastActivity": "2018-10-30T20:31:08.807Z",
+			"teamId": "Y2lzY29zcGFyazovL3VzL1RFQU0vYjc4Yjg2MzAtYjEyOS0xMWU4LThmMTctMjNhYmY5NzVhYjY2",
+			"creatorId": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS8zMWJlZTdjZi1mNTlmLTRlYjgtYmY5Ny1jZjkxOWYxMjRhZDY",
+			"created": "2018-09-05T16:35:36.595Z"
+		},
+
+		
+.\Send-WebexTeamsMessage.ps1 -apiToken "M2IwMDc4ZTctNTJmZS00OWI1LTk3MWEtYjJjYjY1MDI0NzVlZTJjNjU5ZmUtZjQz" -roomName "DevNet Express DCI Event Room" -message "I have completed the Introduction to PowerShell Advanced Mission"

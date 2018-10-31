@@ -3,9 +3,9 @@ import sys
 import requests
 
 #MISSION: FILL IN THE REQUESTED DETAILS
-ACCESS_TOKEN 	= "ZDE5ZDI2MTItNzMyOS00YmMwLTkwZTgtNzcwNDdiMTdjMTJjOTllNDUwMTctYzU5" #Replace None with your access token. Shroud with quotes.
-ROOM_NAME		= "MySparkRoom" #Replace None with the name of the room to be created. Shroud with quotes.
-YOUR_MESSAGE 	= "Welcome to my room" #Replace None with the message that you will post to the room. Shroud with quotes.
+ACCESS_TOKEN 	= "YTNiZDBiZmMtYjg4OC00MTVmLThhM2YtMDZlNzhjY2RlNGM0MWQ0ODVmMWUtNzE0" #Replace None with your access token. Shroud with quotes.
+ROOM_NAME		= "2 DevNet2018 - Webex Teams via Python - aaringo" #Replace None with the name of the room to be created. Shroud with quotes.
+YOUR_MESSAGE 	= "Welcome to the Webex Teams via Python - aaringo" #Replace None with the message that you will post to the room. Shroud with quotes.
 
 
 #sets the header to be used for authentication and data format to be sent.
@@ -79,7 +79,7 @@ if __name__ == '__main__':
 	header=setHeaders()
 	#passing the ROOM_NAME for the room to be created
 #    root_info=getRoomInfo(header,room_id)
-	room_id=createRoom(header,ROOM_NAME) 
+	room_id=createRoom(the_header,ROOM_NAME) 
 	if room_id == None:
 		sys.exit("Please check that functions findRoom and createRoom return the room ID value.")
 	#passing roomId to members function here to add member to the room.
